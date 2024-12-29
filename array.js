@@ -406,13 +406,14 @@ Ex: evenIndexOddLength(strings) => ["madrasa"]
 var strings1= ["alex","mercer","madrasa","rashed2","emad","hala"];
 function evenIndexOddLength(arr){
     let str1=[];
-    for(let i=0; i<arr.length;i++ ){
-        if (i%2==0){
-            if()
-        }
-    }
-
+    // for(let i=0; i<arr.length;i++ ){
+    //     if (i%2==0){
+    //         if(arr[i].length%2==1){str1.push(arr[i]);}
+    //     }
+    // }
+  return str1 ;
 }
+ console.log(evenIndexOddLength(strings1));
 
 /*
 21
@@ -421,13 +422,20 @@ that accept an array of number
 and return a new array that have the elemnt power by the index of it self
 
 var nums= [44, 5, 4, 3, 2, 10]
-Ex: powerElementIndex(nums) => [0, 5, 16, 27, 16, 100000]
+Ex: powerElementIndex(nums) => [0, 5, 16, 27, 16, 100000] ==>1
 
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
-
+var nums7= [44, 5, 4, 3, 2, 10];
+function powerElementIndex(arr){
+    let array2=[];
+    for(let i=0 ; i<arr.length ; i++){
+        array2.push(Math.pow(arr[i],i))
+    }
+return array2 ;
+}
+console.log (powerElementIndex(nums7));
 /*
 22
 Create a function called evenNumberEvenIndex
@@ -440,3 +448,14 @@ Ex: evenNumberEvenIndex(nums) => [2,8,34]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+var nums8= [5,2,2,1,8,66,55,77,34,9,55,1]
+function  evenNumberEvenIndex(arr){
+    let str1=[];
+    for(let i=0; i<arr.length;i++ ){
+            if (i%2==0){
+                if(arr[i]%2==0){str1.push(arr[i]);}
+            }
+        }
+    return str1;
+}
+console.log( evenNumberEvenIndex(nums8));
