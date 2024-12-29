@@ -259,31 +259,36 @@ Ex: shorterString("air","tr","car","github","by")
 function shorterString(s1,s2,s3,s4,s5){
   let arr= [s1,s2,s3,s4,s5];
   let short=arr[0];
-  for(let i=0 ; i<=arr.length ;i++){
-    if( arr[i].length<=short.length){
+  for(let i=0 ; i<arr.length ;i++){
+    if( arr[i].length > short.length){
         short=arr[i];
   }}
-  console.log( short);
+return short;
 }
-shorterString("air","tr","car","github","by");
+console.log(shorterString("air","tr","car","github","by"));
 /*
 14
 Write a function called longerString
 that accept four string as an arguments,
 and return the first longer string
 
-Ex: longerString("air","school","car","github")
-=> school
-
-Ex: longerString("air","schoo","car","github")
-=> github
-
 try all the cases (change the order of the longestString)
 */
-function  longestString(s1,s2,s3,s4,s5){
-  
- 
+function  longestString(s1,s2,s3,s4){
+  let arr= [s1,s2,s3,s4];
+  var long = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].length > long.length) { 
+      long = arr[i];
+    }
+  }
+  return long;
 }
+
+console.log(longestString("air", "school", "car", "github")) ;
+console.log(longestString("air", "schoo", "car", "github"));
+ 
+
 /*
 15
 Write a function called isEven
@@ -385,7 +390,7 @@ Ex: randomNumber()
 
 */
 function randomNumber(){
-  console.log(toFixd(Math.random()))
+  console.log(Math.random());
 }
 randomNumber();
 /*

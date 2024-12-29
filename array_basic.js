@@ -29,7 +29,7 @@ smallest(arr1);
 function all(arr){
     sum=0;
     for(let i=0; i<arr.length ; i++){
-sum+=arr[i];
+sum=sum+arr[i];
     }
     console.log(sum);
 }
@@ -66,26 +66,42 @@ med(arr1);
 // 6-Write a function to remove all duplicates from an array.
 let arr2=[2,3,4,5,5,6,2,7,8];
 function duplicates(arr){
-for(let i=0 ; i<arr.length ; i++){
-    let x=arr[i];
-    for(let j=0 ; j<arr.length ; j++){
-        if(x==arr[j]){
-           arr[j].
-        }
-    }
-}
-console.log(arr);
 
 }
 duplicates(arr2);
 
 // 7-Write a function to sort an array in ascending order.
 let arr3=[2,3,4,5,5,6,2,7,8];
+function sortArrayAescending(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+    return arr;
+}
+
+// function sortArrayAscending(array) {
+//     return array.sort((a, b) => a - b); 
+// }
+
 
 
 // 8-Write a function to sort an array in descending order.
-
-
+function sortArrayDescending(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                }
+            }
+        }
+        return arr;
+    }
+    
+    sortArrayDescending(arr3)
 // 9-Write a function to shuffle the elements of an array randomly.
 
 var myArray = [50, 20, 40, 30, 10, 70];
