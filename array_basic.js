@@ -66,9 +66,23 @@ med(arr1);
 // 6-Write a function to remove all duplicates from an array.
 let arr2=[2,3,4,5,5,6,2,7,8];
 function duplicates(arr){
+  
+        let newArr = [];
+    
+        for(let i = 0; i < arr.length; i++) {
+            if(!newArr.includes(arr[i])){
+                newArr.push(arr[i])
+            }
+    
+            // [1, 2,3,5, 6 4 ]
+        }
+    
+        return newArr;
+    }
+    
+    console.log(remove(arr2))
 
-}
-duplicates(arr2);
+
 
 // 7-Write a function to sort an array in ascending order.
 let arr3=[2,3,4,5,5,6,2,7,8];

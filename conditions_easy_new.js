@@ -1,6 +1,5 @@
 // 1- Write a program to declare two numbers. If both numbers are greater than 10, 
 //print "Both numbers are greater than 10". Otherwise, print "At least one number is not greater than 10".
-
 let n=3;
 let n2=22;
 if(n>10 && n2>10){
