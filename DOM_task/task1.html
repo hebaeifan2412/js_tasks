@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-list</title>
+</head>
+<style>
+
+   h2{
+     margin-left: 25px;
+   }
+ 
+ .const {
+     margin: auto;
+     margin-top: 20px;
+     width: 80%;
+     
+ 
+ }
+ input[type='text'] {
+     display: inline-block;
+     width: 50%;
+     height: 60%;
+     font-size: 15px;
+     border-radius: 5px;
+     border-color: green;
+     margin-left: 25px;
+ }
+ input[type='submit'] {
+     padding: 5px;
+     border: none;
+     outline: none;
+     width: 10%;
+     background-color: green;
+     color: #ffff;
+     font-size: 15px;
+     transition: transform 0.1s ease-in-out;
+     border-radius: 30px;}
+ 
+ .task {
+      display: flex;
+      flex-direction: column;
+     
+     text-align: center;
+     border-color: green;
+     height: 100px;
+     width: 150px;
+     background-color: #a7e09e;
+     border-radius: 5px;
+     padding: 10px;
+     margin: 10px;
+     border: 1px solid green;
+                
+      }
+      .delbtn{
+        margin: 10px;
+        align-items: center;
+        
+       
+      }
+  #todoList{
+    margin-left: 5px;
+    display: block;
+        }
+             
+ #check {
+                 
+   color: green;
+    width: 195px;
+    border: 1px solid green;
+    border-radius: 3px;
+    margin-top: 55px;
+                 
+     }
+             
+                
+</style>
+<body>
+   
+    <div class="addTask">
+        <h2>  Add todo item</h2>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <input type="submit" id="addButton"></button>
+    </div>
+    <div class="const"> 
+        <h2> Todo Item </h2>
+        <div id="todoList">
+          
+        </div>
+    </div>
+
+
+
+    <script>
+        let taskinput=document.getElementById("taskInput");
+        let toDotask =document.getElementById("todoList");
+        let add=document.getElementById("addButton");
+        
+        function mylist(){
+          let tasktext = taskinput.value.trim();
+          let task=document.createElement("div");
+          let deletebtn = document.createElement("button");
+          tasknode=document.createTextNode(tasktext);
+          
+          task.appendChild(tasknode);
+          task.appendChild(deletebtn);
+
+          deletebtn.textContent=" delete";
+          toDotask.appendChild(task);
+          deletebtn.className="delbtn"
+          task.className="task";
+          deletebtn.addEventListener("click", ()=> {
+            toDotask.removeChild(task);
+          })
+          taskinput.value = "";
+          return task;
+        }
+        add.addEventListener("click",mylist);
+    </script>
+</body>
+</html>

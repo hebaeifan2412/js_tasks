@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tempreture</title>
+    <style>
+#main{
+display: flex;
+background-color: rgb(104, 197, 207);
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+height: 100vh;
+}
+input[type='text'] {
+     margin-bottom: 20px;
+     font-size: 25px;
+     border-radius: 5px;
+    
+     
+ }
+ button {
+     padding: 5px;
+     border: none;
+     outline: none;
+     width: 10%;
+     background-color: rgb(232, 237, 238);
+     color: #000000;
+     font-size: 15px;
+     border-radius: 30px;}
+    </style>
+</head>
+<body>
+    <div id="main">
+<input type="text" id="celsius" placeholder="Celsius" >
+<input type="text" id="fahrenheit" placeholder="Fahrenheit" >
+<button id="calculate" type="submit" >calculate</button>
+    </div>
+    <script>
+      
+        let calc=document.getElementById("calculate");
+        function fun(){
+            let celsius = parseFloat(document.getElementById("celsius").value); 
+    let fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
+
+    if(isNaN(celsius) && isNaN(fahrenheit)){
+        alert("Please enter one temp. to convert");
+    }
+    else if(!isNaN(celsius)){
+        let x = (celsius * 1.8) + 32;
+        document.getElementById("fahrenheit").value = x;  
+    }
+    else if(!isNaN(fahrenheit)){
+        let x = (fahrenheit * 1.8) + 32;
+        document.getElementById("celsius").value = x;  
+    }
+}
+
+        
+   calc.addEventListener("click",fun);
+    </script>
+</body>
+</html>

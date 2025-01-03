@@ -258,14 +258,15 @@ Ex: minInArray(nums,8) => [1,2,3,9]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-nums3= [1,2,3,8,9];
-function  removeFromArray( arr,ele){
+nums= [1,2,3,8,9];
+function removeFromArray(arr,ele){
+
     var x=arr.indexOf(ele);
     arr.splice(x, 1);
    
     return arr;
 }
-console.log(removeFromArray(nums3,8));
+console.log(removeFromArray(nums,8));
 /*
 16
 Create a function called oddArray
@@ -281,17 +282,17 @@ Ex: oddArray(nums) => [1,3,9]
 var nums4= [1,2,3,8,9];
 function oddArray(arr){
  let array=[];
-// for(let i=0; i<arr.length ; i++){
-//     if (arr[i]%2==1){
-//         array.push(arr[i]);
-//     }
-// }
-let i=0;
-while(i<arr.length){
+for(let i=0; i<arr.length ; i++){
     if (arr[i]%2==1){
-       array.push(arr[i]);
+        array.push(arr[i]);
+    }
 }
-i++;}
+// let i=0;
+// while(i<arr.length){
+//     if (arr[i]%2==1){
+//        array.push(arr[i]);
+// }
+// i++;}
 return array ;
 }
 console.log(oddArray(nums4) );

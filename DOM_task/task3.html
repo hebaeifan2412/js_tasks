@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3> Countdown Timer </h3>
+    <input id="timer" type="text" size="20" placeholder="Enter seconds">
+    <input type="button" onclick="countdown ()" value="Start Timer">
+    <p id="placetimer"></p>
+
+
+    <script>
+        let x ;
+function countdown (){
+    clearInterval(x);
+const timee = document.getElementById("timer");
+const timer = document.getElementById("placetimer");
+let z = timee.value;
+
+if(isNaN(z) || z <= 0){
+    timer.textContent="Please enter a valid duration in seconds";
+    return;
+}
+
+timer.textContent=z +" seconds";
+
+ x = setInterval(() =>{
+   z --;
+if(z > 0 ){
+timer.textContent=z +" seconds";
+}else{
+timer.textContent = "time is up";
+}
+
+
+}
+
+
+,1000);
+
+
+
+}
+
+</script>
+</body>
+</html>
