@@ -94,23 +94,21 @@
       }
     });
 
-    // Form Submission for Login
     document.getElementById("login-form").addEventListener("submit", function(event) {
       event.preventDefault();
 
       let email = document.getElementById("exampleFormControlInput1").value;
       let password = document.getElementById("inputPassword5").value;
 
-      // Assuming user data is stored in localStorage as 'users'
       let users = JSON.parse(localStorage.getItem("users")) || [];
       let userFound = false;
 
       for (let i = 0; i < users.length; i++) {
-        if (users[i].email === email && users[i].password === password) {
+        if (users[i].email == email && users[i].password == password) {
           userFound = true;
-          // Store user data in sessionStorage
           sessionStorage.setItem("fullName", users[i].fullName);
-          window.location.href = "profile.html"; // Redirect to profile page
+          sessionStorage.setItem("id", users[i].uid);
+          window.location.href = "profile.html";
           break;
         }
       }

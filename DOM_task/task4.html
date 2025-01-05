@@ -78,29 +78,26 @@
     <script>
      
 document.getElementById("search-input").addEventListener("input", function() {
-    const searchValue = this.value.toLowerCase(); // Get the search input value in lowercase
-    const rows = document.querySelectorAll("#data-table tbody tr"); // Select all table rows
+    const searchValue = this.value.toLowerCase();
+    const rows = document.querySelectorAll("#data-table tbody tr"); 
 
     rows.forEach(row => {
-        const cells = row.getElementsByTagName("td"); // Get all table cells in the row
-        let matchFound = false; // Flag to track if any cell matches the search text
+        const cells = row.getElementsByTagName("td"); 
+        let matchFound = false; 
 
-        // Loop through each cell in the row
         for (let cell of cells) {
             if (cell.textContent.toLowerCase().includes(searchValue)) {
-                matchFound = true; // Mark as a match if the cell content includes the search term
-                // Highlight the matching text
+                matchFound = true;
                 cell.innerHTML = cell.textContent.replace(
                     new RegExp(searchValue, "gi"),
                     match => <span class="highlight">${match}</span>
                 );
             } else {
-                // Reset the cell content if it doesn't match
+                
                 cell.innerHTML = cell.textContent;
             }
         }
 
-        // Toggle row visibility based on matching results
         row.style.display = matchFound ? "" : "none";
     });
 });

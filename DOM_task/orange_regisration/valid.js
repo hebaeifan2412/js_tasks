@@ -99,7 +99,6 @@ const f1 = document.getElementById("form1").onsubmit = function (event) {
      let users = JSON.parse(localStorage.getItem("users")) || [];
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
-    sessionStorage.setItem("users", JSON.stringify(users));
     
 
     document.getElementById("form1").submit();

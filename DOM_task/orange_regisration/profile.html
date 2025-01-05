@@ -8,12 +8,12 @@
 <body>
    <p id="welcomeMessage"></p>
     <script>
-    
+   
         let fname = sessionStorage.getItem("fullName");
-     
+        let UId=sessionStorage.getItem("id");
         
             
-        document.getElementById("welcomeMessage").textContent = `Welcome, ${fname}`;
+        document.getElementById("welcomeMessage").textContent = `Welcome, ${fname} your ID ${UId}`;
 
 
 
