@@ -100,6 +100,7 @@ const f1 = document.getElementById("form1").onsubmit = function (event) {
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
     
+    localStorage.clear();
 
     document.getElementById("form1").submit();
   }

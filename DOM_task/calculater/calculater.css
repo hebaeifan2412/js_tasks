@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.full{
+    width: 100%;
+}
+body{
+    background-color: #FFF5D7;
+}
+.container{
+margin: 150px auto ;
+padding: 20px;
+background-color: #F2F9FF;
+gap : 15px;
+display: grid;
+height: 50vh;
+width: 50vh;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: repeat(5,1fr);
+
+}
+.container>*{
+    background-color:#f0abbf;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center; 
+    box-shadow: 0 5px 5px gray;
+    width: 100%;
+    height: 100%;
+}
+
+.box1{
+    grid-column: span 4;
+    background-color: #FFCCE1;
+}

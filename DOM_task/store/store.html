@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>store</title>
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <div class="main">
+    <div class="cards">
+        <div class="card"  id="iphone">
+             <img src="iphone.png" alt="">
+            <div class="content">
+                <p>iphone</p>
+                <p>1800JD</p>
+            </div>
+        <button onclick="additem ('iphone')">Add to cart</button>
+        </div>
+    <div class="card"  id="headset"> <img src="headset.png" alt="">
+        <div class="content"><p>headset</p> <p>150JD</p></div>
+        <button onclick="additem ('headset')">Add to cart</button>
+    </div>
+    <div class="card" id="keboard"> <img src="keboard.jpg" alt="">
+        <div class="content"><p>headset</p> <p>650JD</p></div>
+        <button  onclick="additem ('keboard')">Add to cart</button>
+    </div>
+    </div>
+    <div class="cart" id="cart"></div>
+    <div class="Total" id="Total"></div>
+</div>
+    <script src="store.js"></script>
+</body>
+</html>

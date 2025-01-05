@@ -1,0 +1,65 @@
+.main{
+    display: flex;
+    flex-direction:column ;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 700;
+}
+.card button{
+    width: 5rem;
+    align-self: center;
+    background-color: blue;
+    color: aliceblue;
+    border-radius:5px ;
+    border: 0;
+    padding: .25rem;
+}
+
+.cart{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+
+}
+.cart>*{
+    display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   font-weight: 700;
+}
+.cart>* img {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid black;
+
+}
+.cart>* button{
+    border: 0;
+
+}
+#Total{
+   position: absolute;
+   right: 10px;
+   bottom: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: rgb(40, 40, 161);
+    border-radius: 5px;
+    color: aliceblue;
+}
