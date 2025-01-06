@@ -28,3 +28,4 @@ window.onload = function() {
         document.body.style.backgroundColor = "#333";
     }
 };
+$("div").css("color","red");

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   input[type="text"]{
+   font-size: 1.5rem;
+    }
+    button{
+        font-size: 1.5rem;
+    }
+  #displayComment{
+    font-size: 2rem;
+    color: rgb(28, 78, 23);
+  }
+    </style>
+</head>
+<body>
+    <h1>AJAX Request with JavaScript </h1>
+    
+    <input type="text" id="comment" placeholder="JavaScript"/>
+    <button type="submit" id="send" onclick="Commentdiv()">Send comment </button>
+    <h1 id="getComment">Get comment : <span id="responseComment"></span></h1>
+
+<div id="displayComment"></div>
+
+
+
+
+
+<script src="ajax.js"></script>
+</body>
+</html>
