@@ -2,20 +2,18 @@ let cart=[];
 function loadCart() {
     let storedCart = localStorage.getItem('cart');
     if (storedCart) {
-        cart = JSON.parse(storedCart); // Parse the cart data from JSON
+        cart = JSON.parse(storedCart); 
     }
-    renderCart(); // Render the cart with stored data
+    renderCart(); 
 }
 function saveSessionStorage() {
-    sessionStorage.setItem('cart', JSON.stringify(cart)); // Store cart data for the session
+    sessionStorage.setItem('cart', JSON.stringify(cart)); 
 }
-// Save the cart to Local Storage
 function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart)); // Store cart data as JSON string
+    localStorage.setItem('cart', JSON.stringify(cart)); 
 }
 
 function updateQuantity(itemId, change) {
-    // Find the item in the cart
     let item = cart.find(cartItem => cartItem.id === itemId);
 
     if (item) {
@@ -25,11 +23,9 @@ function updateQuantity(itemId, change) {
             item.quantity = 1;
         }
 
-        // Re-render the cart
         renderCart();
     }}
     function removeItem(itemId) {
-        // Remove the item from the cart array
         cart = cart.filter(cartItem => cartItem.id !== itemId);
         saveSessionStorage(); 
         saveCart();
@@ -43,15 +39,13 @@ function additem (id){
         console.log(image); let existingItem = cart.find(cartItem => cartItem.id === id);
 
         if (existingItem) {
-            // If item exists, increase the quantity
             existingItem.quantity++;
         } else {
-            // If item doesn't exist, add new item to cart
             let cartItem = {
                 id:itemID,
                 price: price,
                 imageSrc: image.src,
-                quantity: 1 // Set initial quantity to 1
+                quantity: 1 
             };
             cart.push(cartItem);
 
@@ -62,10 +56,9 @@ function additem (id){
     }
         function renderCart() {
             let cartItems= document.getElementById("cart");
-            cartItems.innerHTML = ''; // Clear existing cart items
+            cartItems.innerHTML = ''; 
         
             cart.forEach(item => {
-                // Use a template to render each item in the cart
                 let cartItem = `
                     <div class="cart-item">
                         <img src="${item.imageSrc}" alt="">
@@ -87,14 +80,11 @@ function additem (id){
         
         let totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
-        // Add the total price to the Total container
         let totalTemplate = `
             <div class="cart-total">
                 <p>Total: ${totalPrice} JD</p>
             </div>
         `;
-        document.getElementById("Total").innerHTML = totalTemplate; // Render total in the Total div
-    }
-    window.onload = loadCart;
+        document.getElementById("Total").innerHTML = totalTemplate; 
     
-
+        }
